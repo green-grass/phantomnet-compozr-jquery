@@ -1,6 +1,6 @@
 {
   "name": "phantomnet-compozr-jquery",
-  "version": "1.0.0-beta2",
+  "version": "1.0.0-beta3",
   "homepage": "https://github.com/green-grass/phantomnet-compozr-jquery",
   "authors": [
     "Minh Nguyen <mnguyen284@gmail.com>"
@@ -26,8 +26,10 @@
   ],
   "dependencies": {
     "bootstrap": "latest",
+    "eonasdan-bootstrap-datetimepicker": "latest",
     "font-awesome": "latest",
     "phantomnet-bootstrap-utilities": "latest",
-    "rangy": "1.2.3"
+    "rangy": "1.2.3",
+    "select2": "3.5.2"
   }
 }
