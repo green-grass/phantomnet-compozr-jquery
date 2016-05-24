@@ -1,0 +1,31 @@
+{
+  "name": "phantomnet-compozr-jquery",
+  "version": "1.0.0-beta1",
+  "homepage": "https://github.com/green-grass/phantomnet-compozr-jquery",
+  "authors": [
+    "Minh Nguyen <mnguyen284@gmail.com>"
+  ],
+  "description": "jQuery Compozr",
+  "main": [
+    "./dist/phantomnet-compozr-jquery.js"
+  ],
+  "keywords": [
+    "Compozr",
+    "jQuery"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "wwwroot/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "latest",
+    "font-awesome": "latest",
+    "phantomnet-bootstrap-utilities": "latest",
+    "rangy": "1.2.3"
+  }
+}

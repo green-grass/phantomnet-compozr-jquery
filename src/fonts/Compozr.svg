@@ -1,0 +1,39 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg>
+<metadata>
+Created by FontForge 20110222 at Sat May 24 13:58:28 2014
+ By deploy user
+SIL Open Font License
+</metadata>
+<defs>
+<font id="Compozr" horiz-adv-x="0" >
+  <font-face 
+    font-family="Compozr"
+    font-weight="400"
+    font-stretch="normal"
+    units-per-em="1024"
+    panose-1="0 0 0 0 0 0 0 0 0 0"
+    ascent="819"
+    descent="-205"
+    bbox="51 -5 563 517"
+    underline-thickness="1"
+    underline-position="-2"
+    unicode-range="U+000D-0043"
+  />
+<missing-glyph horiz-adv-x="676" 
+d="M184 102h308q6 91 20 272q-7 12 -20 36h-308v-308zM133 461h410q7 -16 20 -47q-6 -121 -20 -363h-410v410z" />
+    <glyph glyph-name=".notdef" horiz-adv-x="676" 
+d="M184 102h308q6 91 20 272q-7 12 -20 36h-308v-308zM133 461h410q7 -16 20 -47q-6 -121 -20 -363h-410v410z" />
+    <glyph glyph-name=".null" 
+ />
+    <glyph glyph-name=".null" 
+ />
+    <glyph glyph-name="nonmarkingreturn" unicode="&#xd;" 
+ />
+    <glyph glyph-name="space" unicode=" " horiz-adv-x="276" 
+ />
+    <glyph glyph-name="C" unicode="C" horiz-adv-x="466" 
+d="M51 178v151q0 188 215 188q84 0 163 -15q0 -2 -1 -5v-5q-4 -12 -5 -14q-64 14 -159 14q-89 0 -139 -37q-49 -37 -49 -113v-171q0 -76 49 -113q50 -38 139 -38q100 0 162 15q4 -11 4 -25q-74 -15 -164 -15q-102 0 -158 42q-57 43 -57 141z" />
+  </font>
+</defs></svg>

@@ -1,0 +1,18 @@
+{
+  "name": "phantomnet-compozr-jquery",
+  "description": "jQuery Compozr",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/green-grass/phantomnet-compozr-jquery.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-less": "3.0.5",
+    "gulp-concat": "2.6.0",
+    "gulp-cssmin": "0.1.7",
+    "gulp-uglify": "1.2.0",
+    "gulp-rename": "1.2.2",
+    "rimraf": "2.2.8"
+  }
+}

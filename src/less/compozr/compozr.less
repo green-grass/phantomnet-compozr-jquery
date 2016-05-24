@@ -1,0 +1,172 @@
+@font-face {
+    font-family: "Compozr";
+    src: url("@{compozr-branding-font-path}@{compozr-branding-font-name}.eot");
+    src: url("@{compozr-branding-font-path}@{compozr-branding-font-name}.eot") format("embedded-opentype"), url("@{compozr-branding-font-path}@{compozr-branding-font-name}.woff") format("woff"), url("@{compozr-branding-font-path}@{compozr-branding-font-name}.ttf") format("truetype"), url("@{compozr-branding-font-path}@{compozr-branding-font-name}.svg#Compozr") format("svg"); /* For IE 6 and 7 */
+    font-weight: normal;
+    font-style: normal;
+}
+
+[contenteditable] {
+    cursor: text;
+
+    &:hover, &:focus {
+        background: @input-bg-disabled;
+    }
+
+    &.place-holder {
+        color: @state-info-text;
+        font-style: italic;
+
+        &.required {
+            color: @state-danger-text;
+        }
+    }
+}
+
+.compozr-placeholder {
+    margin: 0;
+    border-top: 0;
+    border-radius: 0;
+    z-index: 0;
+
+    .navbar-brand {
+        display: block;
+        float: none;
+        text-align: center;
+    }
+}
+
+#layout-compozr {
+    position: relative;
+    z-index: @zindex-navbar-fixed;
+    
+    .navbar-brand {
+        font-family: Compozr;
+        cursor: default;
+        font-size: 36px;
+        font-weight: bold;
+    }
+
+    .navbar-nav {
+        > li {
+            float: left;
+        }
+
+        [data-compozr-menu-item], [data-compozr-toolbar-item] {
+            cursor: pointer;
+        }
+
+        .glyphicon {
+            font-size: @font-size-small;
+        }
+    }
+
+    .navbar-collapse {
+        .navbar-nav {
+            margin-left: -10px;
+            margin-right: -10px;
+
+            > li > a {
+                padding: 5px 10px;
+            }
+        }
+
+        @media (min-width: @grid-float-breakpoint) {
+            .navbar-nav {
+                margin-left: 0;
+                margin-right: 0;
+
+                > li > a {
+                    padding: @navbar-padding-vertical 8px;
+                }
+            }
+
+            .navbar-right:last-child {
+                margin-right: -8px;
+            }
+        }
+
+        @media (min-width: @screen-md-min) {
+            .navbar-nav {
+                > li > a {
+                    padding: @navbar-padding-vertical 12px;
+                }
+            }
+
+            .navbar-right:last-child {
+                margin-right: -12px;
+            }
+        }
+
+        @media (min-width: @screen-lg-min) {
+            .navbar-nav {
+                > li > a {
+                    padding: @navbar-padding-vertical @navbar-padding-horizontal;
+                }
+            }
+
+            .navbar-right:last-child {
+                margin-right: -@navbar-padding-horizontal;
+            }
+        }
+    }
+
+    .navbar-header {
+        .navbar-nav {
+            margin-top: 5px;
+            margin-bottom: 5px;
+
+            > li {
+                padding-left: 0;
+                padding-right: 0;
+
+                > a {
+                    padding-left: 15px;
+                    padding-right: 15px;
+                }
+            }
+        }
+
+        .navbar-left {
+            &:first-of-type {
+                margin-left: 0;
+            }
+
+            float: left !important;
+        }
+
+        .navbar-right {
+            &:first-of-type {
+                margin-right: 0;
+            }
+
+            float: right !important;
+        }
+    }
+
+    .navbar-default {
+        .navbar-brand {
+            color: @navbar-default-brand-hover-color;
+
+            &:hover,
+            &:focus {
+                color: @navbar-default-brand-hover-color;
+            }
+        }
+    }
+
+    .navbar-inverse {
+        .navbar-brand {
+            color: @navbar-inverse-brand-hover-color;
+
+            &:hover,
+            &:focus {
+                color: @navbar-inverse-brand-hover-color;
+            }
+        }
+    }
+
+    .compozr-error-messages {
+        margin-top: @navbar-height;
+    }
+}

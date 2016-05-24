@@ -1,0 +1,351 @@
+@image-height: 100px;
+@upload-button-font-size: 65px;
+@upload-button-line-height: 86px;
+@upload-button-padding: 12px 14px 0 19px;
+@images-panel-height: @image-height + 37px;
+@images-panel-height-touch: @image-height;
+
+@image-height-xs: 50px;
+@upload-button-font-size-xs: 30px;
+@upload-button-line-height-xs: 40px;
+@upload-button-padding-xs: 7px 8px 2px 10px;
+@images-panel-height-xs: @image-height-xs + 37px;
+@images-panel-height-touch-xs: @image-height-xs;
+
+@section-background: black;
+@large-progress-bar-background-size: 40px * 4;
+@large-progress-bar-transition: 2s * 4;
+
+.page-compozr-images-panel {
+    background: @section-background;
+    height: @images-panel-height;
+    margin-bottom: @navbar-height;
+
+    & > h2 {
+        float: left;
+        font-size: @font-size-base;
+        margin: @padding-base-vertical @padding-small-horizontal @padding-small-vertical @padding-small-horizontal;
+    }
+
+    & > .note {
+        float: right;
+        font-size: @font-size-small;
+        margin: @padding-base-vertical @padding-small-horizontal @padding-small-vertical @padding-small-horizontal;
+        line-height: @headings-line-height;
+    }
+
+    .folder-container {
+        clear: both;
+        overflow: auto;
+
+        .remote-folder {
+            white-space: nowrap;
+            padding-left: @padding-small-horizontal;
+
+            > .btn {
+                font-size: @upload-button-font-size;
+                line-height: @upload-button-line-height;
+                padding: @upload-button-padding;
+                margin-bottom: 3px; /* fix IE bug */
+                margin-right: @padding-small-horizontal / 2;
+            }
+
+            > ul {
+                display: inline-block;
+                vertical-align: bottom;
+                margin: 0;
+                margin-bottom: 3px; /* fix IE bug */
+                margin-right: @padding-small-horizontal / 2;
+
+                &:empty {
+                    display: none;
+                }
+
+                > li {
+                    display: inline-block;
+                    vertical-align: bottom;
+                    height: @image-height;
+                    overflow: hidden;
+
+                    img {
+                        cursor: pointer;
+                        display: block;
+                        max-height: @image-height;
+                        margin: 0 auto;
+
+                        &.disabled {
+                            cursor: not-allowed;
+                            .opacity(.5);
+                        }
+                    }
+
+                    .panel {
+                        margin: 0 0 0 @padding-small-horizontal / 2;
+                        border-radius: @border-radius-large;
+                        overflow: hidden;
+                        background: transparent;
+                        border: 0;
+
+                        .panel-heading {
+                            padding: 0;
+                            border-bottom: 0;
+                            position: relative;
+                            top: 0 - 16px - @padding-small-vertical * 2;
+
+                            .panel-title {
+                                .border-bottom-radius(@border-radius-large);
+                                padding: @padding-small-vertical @padding-small-horizontal;
+                                font-size: 12px;
+                                line-height: 16px;
+                                height: 16px + (@padding-small-vertical * 2);
+                                overflow: hidden;
+                                position: relative;
+                                top: @image-height;
+                                z-index: 1;
+
+                                .btn {
+                                    line-height: 12px;
+                                    padding-left: 2px;
+                                    padding-right: 2px;
+
+                                    .glyphicon:empty {
+                                        width: 10px;
+                                        font-size: 10px;
+                                    }
+                                }
+
+                                .progress {
+                                    width: 16px;
+                                    height: 16px;
+                                }
+                            }
+                        }
+
+                        .panel-body {
+                            padding: 0;
+                            background: lighten(@section-background, 15%);
+                            height: @image-height;
+                            position: relative;
+                            top: 0 - 16px - @padding-small-vertical * 2;
+
+                            .progress {
+                                height: @image-height;
+
+                                &.active .progress-bar {
+                                    -webkit-animation: large-progress-bar-stripes @large-progress-bar-transition linear infinite;
+                                    -moz-animation: large-progress-bar-stripes @large-progress-bar-transition linear infinite;
+                                    -o-animation: large-progress-bar-stripes @large-progress-bar-transition linear infinite;
+                                    animation: large-progress-bar-stripes @large-progress-bar-transition linear infinite;
+                                }
+                            }
+
+                            .progress-striped .progress-bar {
+                                background-size: @large-progress-bar-background-size @large-progress-bar-background-size;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .popover {
+                ul {
+                    margin: 0;
+                    font-size: @font-size-small;
+
+                    a {
+                        display: block;
+                        cursor: pointer;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.touch {
+    .page-compozr-images-panel {
+        height: @images-panel-height-touch;
+
+        & > h2, & > .note {
+            display: none;
+        }
+
+        .folder-container {
+            .remote-folder {
+                padding-left: 0;
+
+                > .btn {
+                    border-radius: 0;
+                    margin-bottom: 0; /* fix IE bug above */
+                }
+
+                > ul {
+                    margin-bottom: 0; /* fix IE bug above */
+                    &:last-of-type {
+                        margin-right: 0;
+                    }
+
+                    > li {
+                        .panel {
+                            border-radius: 0;
+
+                            .panel-heading {
+                                .panel-title {
+                                    border-radius: 0;
+                                }
+                            }
+
+                            .panel-body {
+                                .progress {
+                                    border-radius: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: @screen-xs-max) {
+    .page-compozr-images-panel {
+        height: @images-panel-height-xs;
+
+        .folder-container {
+            .remote-folder {
+                > .btn {
+                    font-size: @upload-button-font-size-xs;
+                    line-height: @upload-button-line-height-xs;
+                    padding: @upload-button-padding-xs;
+                }
+
+                > ul {
+                    > li {
+                        height: @image-height-xs;
+
+                        img {
+                            max-height: @image-height-xs;
+                        }
+
+                        .panel {
+                            .panel-heading {
+                                top: 0 - 16px - @padding-small-vertical;
+
+                                .panel-title {
+                                    padding: @padding-small-vertical / 2 @padding-small-horizontal;
+                                    top: @image-height-xs;
+                                    height: 16px + @padding-small-vertical;
+                                }
+                            }
+
+                            .panel-body {
+                                height: @image-height-xs;
+                                top: 0 - 16px - @padding-small-vertical;
+
+                                .progress {
+                                    height: @image-height-xs;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .touch {
+        .page-compozr-images-panel {
+            height: @images-panel-height-touch-xs;
+        }
+    }
+}
+
+@-webkit-keyframes large-progress-bar-stripes {
+    from {
+        background-position: @large-progress-bar-background-size 0;
+    }
+
+    to {
+        background-position: 0 0;
+    }
+}
+
+@-moz-keyframes large-progress-bar-stripes {
+    from {
+        background-position: @large-progress-bar-background-size 0;
+    }
+
+    to {
+        background-position: 0 0;
+    }
+}
+
+@-o-keyframes large-progress-bar-stripes {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: @large-progress-bar-background-size 0;
+    }
+}
+
+@keyframes large-progress-bar-stripes {
+    from {
+        background-position: @large-progress-bar-background-size 0;
+    }
+
+    to {
+        background-position: 0 0;
+    }
+}
+
+.panel-variant(@border, @heading-text-color, @heading-bg-color, @heading-border) {
+    border-color: @border;
+
+    & > .panel-heading > .panel-title {
+        color: @heading-text-color;
+        background-color: fade(@heading-bg-color, 75%);
+        border-color: @heading-border;
+
+        + .panel-collapse .panel-body {
+            border-top-color: @border;
+        }
+
+        & > .dropdown .caret {
+            border-color: @heading-text-color transparent;
+        }
+    }
+
+    & > .panel-footer {
+        + .panel-collapse .panel-body {
+            border-bottom-color: @border;
+        }
+    }
+}
+
+.panel-default {
+    .panel-variant(@panel-default-border, @panel-default-text, @panel-default-heading-bg, @panel-default-border);
+}
+
+.panel-primary {
+    .panel-variant(@panel-primary-border, @panel-primary-text, @panel-primary-heading-bg, @panel-primary-border);
+}
+
+.panel-success {
+    .panel-variant(@panel-success-border, @panel-success-text, @panel-success-heading-bg, @panel-success-border);
+}
+
+.panel-warning {
+    .panel-variant(@panel-warning-border, @panel-warning-text, @panel-warning-heading-bg, @panel-warning-border);
+}
+
+.panel-danger {
+    .panel-variant(@panel-danger-border, @panel-danger-text, @panel-danger-heading-bg, @panel-danger-border);
+}
+
+.panel-info {
+    .panel-variant(@panel-info-border, @panel-info-text, @panel-info-heading-bg, @panel-info-border);
+}

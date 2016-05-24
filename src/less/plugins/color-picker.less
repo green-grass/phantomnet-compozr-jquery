@@ -1,0 +1,22 @@
+@item-size: 20px;
+@item-margin: 1px;
+
+.color-picker {
+    ul {
+        .clearfix();
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: (@item-size + (@item-margin * 2)) * 11;
+
+        li {
+            float: left;
+            margin: @item-margin;
+            border-radius: 50%;
+            width: @item-size;
+            height: @item-size;
+            border-bottom: 1px solid rgba(0,0,0,0.2);
+            cursor: pointer;
+        }
+    }
+}
